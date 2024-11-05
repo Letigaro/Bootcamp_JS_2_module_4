@@ -5,21 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Laboratory 4</title>
   </head>
   <body>
     <div class="turno-display">
-      <h1 class="numero-turno"></h1>
-      <p class="texto-turno">Por favor, acérquese al mostrador</p>
+      <h1 id="numero-turno"></h1>
+      <p id="texto-turno">Por favor, acérquese al mostrador</p>
     </div>
     <div class="botones-turno">
       <button id="prev-turno">Turno Anterior</button>
       <button id="next-turno">Siguiente Turno</button>
       <button id="reset-turno">Reset Turno</button>
     </div>
-
-
-
+    <div id="cambio-manual-turno">
+      <div>Si lo desea puede escribir el turno manualmente</div>
+      <input type="text" id="input-manual-turno" />
+      <button id="new-manual-turno">Enviar</button>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
