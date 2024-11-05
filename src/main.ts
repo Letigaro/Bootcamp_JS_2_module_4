@@ -15,7 +15,7 @@ function actualizarTurno() {
     numeroTurno.textContent = formatNumber(turnoActual);      
   }
 
-// Formatear número dos digitos
+// Función para formatear número dos digitos
 function formatNumber(number: string | number): string {
     const numericValue = typeof number === 'string' ? parseInt(number) : number;
       if (isNaN(numericValue)) {
@@ -60,6 +60,7 @@ newManualTurnoButton.addEventListener("click", () => {
     limpiarInput(inputManualTurno);
 });
 
+// Función para limpiar inputs
 function limpiarInput(inputElement: { value: string; }){
     inputElement.value = '';
 }
