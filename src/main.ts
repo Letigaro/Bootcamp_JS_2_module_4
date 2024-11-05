@@ -14,7 +14,7 @@ let turnoActual = 0;
 function actualizarTurno() {
     numeroTurno.textContent = formatNumber(turnoActual);      
   }
-  
+
 // Formatear número dos digitos
 function formatNumber(number: string | number): string {
     const numericValue = typeof number === 'string' ? parseInt(number) : number;
@@ -47,10 +47,19 @@ resetButton.addEventListener("click", () => {
   actualizarTurno();
 });
 
-// Event listener para el cambio manual de turno
+// Añadir manualmente el turno
 newManualTurnoButton.addEventListener("click", () => {
-    const nuevoTurno = parseInt(inputManualTurno.value, 10);
+    let nuevoTurno = parseInt(inputManualTurno.value, 10);
+    if (isNaN(nuevoTurno)){
+        console.log("El turno escrito manualmente no es correcto. Añada un número");
+        limpiarInput(inputManualTurno);
+        return;
+    }
     turnoActual = nuevoTurno;
     actualizarTurno();
-    inputManualTurno.value = '';
+    limpiarInput(inputManualTurno);
 });
+
+function limpiarInput(inputElement: { value: string; }){
+    inputElement.value = '';
+}
